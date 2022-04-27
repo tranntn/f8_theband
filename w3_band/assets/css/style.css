@@ -20,11 +20,11 @@ html {
   color: #fff !important;
 }
 
-.text-center{
+.text-center {
   text-align: center !important;
 }
 
-.pull-right{
+.pull-right {
   float: right !important;
 }
 
@@ -36,6 +36,9 @@ html {
   padding: 11px 16px;
   margin-top: 15px;
   border: none;
+  text-align: center;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .btn:hover {
@@ -44,41 +47,45 @@ html {
   cursor: pointer;
 }
 
-.row{
+.row {
   margin-left: -8px;
   margin-right: -8px;
 }
 
-.row::after{
+.row::after {
   content: "";
   display: block;
   clear: both;
 }
 
-.col{
+.col {
   float: left;
   padding-right: 8px;
   padding-left: 8px;
 }
 
-.col-3{
+.col-3 {
   width: 33.33333%;
 }
 
-.col-2{
+.col-2 {
   width: 50%;
 }
 
-.col-full{
+.col-full {
   width: 100%;
 }
 
-.mt-8{
+.mt-8 {
   margin-top: 8px !important;
 }
 
-.mt-16{
+.mt-16 {
   margin-top: 16px !important;
+}
+
+.mt-32 {
+  margin-top: 32px !important;
 }
 
 /* Main */
@@ -154,6 +161,14 @@ html {
   font-size: 12px;
 }
 
+#header .mobile-menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
   float: right;
   padding: 0 21px;
@@ -164,6 +179,15 @@ html {
   cursor: pointer;
 }
 
+#header .mobile-menu-btn:hover {
+  background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+  color: #000;
+}
+
+#header .menu-icon,
 #header .search-icon {
   color: #fff;
   font-size: 20px;
@@ -232,7 +256,7 @@ html {
 }
 
 #content .members-list {
-  padding-top: 48px;
+  padding-top: 32px;
 }
 
 #content .member-name {
@@ -282,7 +306,7 @@ html {
 }
 
 .places-list {
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 .place-img {
@@ -315,32 +339,41 @@ html {
 }
 
 /* Contact from */
-.contact-content{
+.contact-content {
   margin-top: 48px;
 }
 
-.contact-info{
+.contact-info {
   font-size: 18px;
   line-height: 1.5;
 }
 
-.contact-info i[class*='ti-']{
+.contact-info a {
+  color: #00e;
+  opacity: 0.8;
+}
+
+.contact-info a:hover {
+  opacity: 1;
+}
+
+.contact-info i[class*="ti-"] {
   width: 30px;
   display: inline-block;
 }
 
-.contact-form{
+.contact-form {
   font-size: 15px;
 }
 
-.contact-form .form-control{
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 100%;
+.contact-form .form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
 }
 
 /* Map section*/
-.map-section img{
+.map-section img {
   width: 100%;
 }
 
@@ -349,30 +382,29 @@ html {
   text-align: center;
 }
 
-#footer .social-list{
+#footer .social-list {
   font-size: 24px;
 }
 
-#footer .social-list a{
+#footer .social-list a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.6);
 }
 
 #footer .copy-right a:hover,
-#footer .social-list a:hover{
+#footer .social-list a:hover {
   color: rgba(0, 0, 0, 0.4);
 }
 
-#footer .copy-right{
+#footer .copy-right {
   margin-top: 15px;
   font-size: 15px;
   color: rgba(0, 0, 0, 0.6);
 }
 
-#footer .copy-right a{
+#footer .copy-right a {
   color: rgba(0, 0, 0, 0.6);
 }
-
 
 .modal {
   display: none;
@@ -386,7 +418,7 @@ html {
   justify-content: center;
 }
 
-.modal.open{
+.modal.open {
   display: flex;
 }
 
@@ -396,7 +428,7 @@ html {
   max-width: calc(100% -32px);
   min-height: 200px;
   position: relative;
-  animation: modalFadeIn ease .5s;
+  animation: modalFadeIn ease 0.5s;
 }
 
 .modal-header {
@@ -409,72 +441,72 @@ html {
   color: #fff;
 }
 
-.modal-heading-icon{
+.modal-heading-icon {
   margin-right: 16px;
 }
 
-.modal-close{
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #fff;
-    padding: 12px;
-    cursor: pointer;
-    opacity: 0.9;
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  padding: 12px;
+  cursor: pointer;
+  opacity: 0.9;
 }
 
-.modal-close:hover{
+.modal-close:hover {
   opacity: 1;
 }
 
-.modal-body{
+.modal-body {
   padding: 16px;
 }
 
 .modal-label {
-    display: block;
-    font-size: 15px;
-    margin-bottom: 12px;
+  display: block;
+  font-size: 15px;
+  margin-bottom: 12px;
 }
 
 .modal-input {
-    border: 1px solid #ccc;
-    width: 100%;
-    padding: 10px;
-    font-size: 15px;
-    margin-bottom: 24px;
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 24px;
 }
 
 #buy-tickets {
-    color: #fff;
-    background: #009688;
-    border: none;
-    width: 100%;
-    font-size: 15px;
-    text-transform: uppercase;
-    padding: 18px;
+  color: #fff;
+  background: #009688;
+  border: none;
+  width: 100%;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 18px;
 }
 
 #buy-tickets:hover {
-    opacity: 0.9;
-    cursor: pointer;
+  opacity: 0.9;
+  cursor: pointer;
 }
 
-.modal-footer{
+.modal-footer {
   padding: 16px;
   text-align: right;
 }
 
-.modal-footer a{
-  color: #2196F3;
+.modal-footer a {
+  color: #2196f3;
 }
 
 @keyframes modalFadeIn {
-  from{
+  from {
     opacity: 0;
     transform: translateY(-130px);
   }
-  to{
+  to {
     opacity: 1;
     transform: translateY(0);
   }

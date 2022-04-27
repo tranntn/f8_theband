@@ -34,6 +34,10 @@
           </li>
         </ul>
 
+        <div id="mobile-menu" class="mobile-menu-btn">
+          <i class="menu-icon ti-menu"></i>
+        </div>
+
         <div class="search-btn">
           <i class="search-icon ti-search"></i>
         </div>
@@ -68,7 +72,7 @@
           </p>
 
           <div class="row members-list">
-            <div class="text-center col col-3">
+            <div class="text-center col col-3 s-col-full mt-32">
               <p class="member-name">Name</p>
               <img
                 src="/assets/img/band/bandmember.jpg"
@@ -77,7 +81,7 @@
               />
             </div>
 
-            <div class="text-center col col-3">
+            <div class="text-center col col-3 s-col-full mt-32">
               <p class="member-name">Name</p>
               <img
                 src="/assets/img/band/bandmember.jpg"
@@ -86,7 +90,7 @@
               />
             </div>
 
-            <div class="text-center col col-3">
+            <div class="text-center col col-3 s-col-full mt-32">
               <p class="member-name">Name</p>
               <img
                 src="/assets/img/band/bandmember.jpg"
@@ -113,7 +117,7 @@
 
             <!-- Places -->
             <div class="row places-list">
-              <div class="col col-3">
+              <div class="col col-3 s-col-full mt-16">
                 <img
                   src="./assets/img/places/place1.jpg"
                   alt="New York"
@@ -125,11 +129,13 @@
                   <p class="place-desc">
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                   </p>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn s-full-width js-buy-ticket">
+                    Buy Tickets
+                  </button>
                 </div>
               </div>
 
-              <div class="col col-3">
+              <div class="col col-3 s-col-full mt-16">
                 <img
                   src="./assets/img/places/place2.jpg"
                   alt="New York"
@@ -141,11 +147,13 @@
                   <p class="place-desc">
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                   </p>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn s-full-width js-buy-ticket">
+                    Buy Tickets
+                  </button>
                 </div>
               </div>
 
-              <div class="col col-3">
+              <div class="col col-3 s-col-full mt-16">
                 <img
                   src="./assets/img/places/place3.jpg"
                   alt="New York"
@@ -157,7 +165,9 @@
                   <p class="place-desc">
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                   </p>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn s-full-width js-buy-ticket">
+                    Buy Tickets
+                  </button>
                 </div>
               </div>
             </div>
@@ -169,15 +179,21 @@
           <h2 class="section-heading">Contact</h2>
           <p class="section-sub-heading">Fan? Drop a note!</p>
           <div class="row contact-content">
-            <div class="col col-2 contact-info">
+            <div class="col col-2 s-col-full contact-info">
               <p><i class="ti-location-pin"></i>Chicago, US</p>
-              <p><i class="ti-mobile"></i>Phone: +00 151515</p>
-              <p><i class="ti-email"></i>Email: mail@mail.com</p>
+              <p>
+                <i class="ti-mobile"></i>Phone:
+                <a href="tel:0392799990">0392799990</a>
+              </p>
+              <p>
+                <i class="ti-email"></i>Email:
+                <a href="mailto:tranntn269@gmail.com">mail@mail.com</a>
+              </p>
             </div>
-            <div class="col col-2 contact-form">
+            <div class="col col-2 s-col-full contact-form">
               <form action="">
                 <div class="row">
-                  <div class="col col-2">
+                  <div class="col col-2 s-col-full">
                     <input
                       type="text"
                       name=""
@@ -188,7 +204,7 @@
                     />
                   </div>
 
-                  <div class="col col-2">
+                  <div class="col col-2 s-col-full s-mt-8">
                     <input
                       type="email"
                       name=""
@@ -212,7 +228,7 @@
                 </div>
 
                 <input
-                  class="btn pull-right mt-16"
+                  class="contact-submit-btn btn pull-right mt-16 s-full-width"
                   type="submit"
                   value="SEND"
                 />
@@ -229,17 +245,17 @@
 
       <div id="footer">
         <div class="social-list">
-            <a href=""><i class="ti-facebook"></i></a>
-            <a href=""><i class="ti-instagram"></i></a>
-            <a href=""><i class="ti-youtube"></i></a>
-            <a href=""><i class="ti-pinterest"></i></a>
-            <a href=""><i class="ti-twitter"></i></a>
-            <a href=""><i class="ti-linked"></i></a>
+          <a href=""><i class="ti-facebook"></i></a>
+          <a href=""><i class="ti-instagram"></i></a>
+          <a href=""><i class="ti-youtube"></i></a>
+          <a href=""><i class="ti-pinterest"></i></a>
+          <a href=""><i class="ti-twitter"></i></a>
+          <a href=""><i class="ti-linked"></i></a>
         </div>
 
         <p class="copy-right">
-            Powered by
-            <a href="">w3.css</a>
+          Powered by
+          <a href="">w3.css</a>
         </p>
       </div>
     </div>
@@ -312,6 +328,35 @@
       modalContainer.addEventListener("click", (event) => {
         event.stopPropagation();
       });
+
+      //menu toggle
+      var headerEl = document.getElementById("header");
+      var mobileMenuEl = document.getElementById("mobile-menu");
+      var headerHeight = headerEl.clientHeight;
+
+      mobileMenuEl.onclick = function () {
+        var isClose = headerEl.clientHeight === headerHeight;
+        if (isClose) {
+          headerEl.style.height = "auto";
+        } else headerEl.style.height = "46px";
+      };
+
+      //automatic close when chosing menu
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+
+      for (const menuItem of menuItems) {
+        menuItem.onclick = function (event) {
+          var isParentMenu =
+            this.nextElementSibling &&
+            this.nextElementSibling.classList.contains("subnav");
+
+          if (isParentMenu) {
+            event.preventDefault();
+          } else {
+            headerEl.style.height = "46px";
+          }
+        };
+      }
     </script>
   </body>
 </html>
